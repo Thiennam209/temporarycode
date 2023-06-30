@@ -150,7 +150,7 @@ export default function HeaderLinks(props) {
             </Link>
             <Link
               w='100%'
-              href='https://github.com/horizon-ui/horizon-ui-chakra'>
+              href='https://github.com/horizon-ui/dtvt'>
               <Button
                 w='100%'
                 h='44px'

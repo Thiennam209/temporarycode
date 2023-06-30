@@ -31,7 +31,7 @@ const routes = [
   {
     name: "Assets",
     layout: "/admin",
-    path: "/nft-marketplace",
+    path: "/assets",
     icon: (
       <Icon
         as={MdOutlineShoppingCart}
