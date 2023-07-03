@@ -1,6 +1,10 @@
 {
   "homepage": ".",
+<<<<<<< .merge_file_kvXvlL
   "name": "dtvt-asset-management",
+=======
+  "name": "horizon-ui-chakra",
+>>>>>>> .merge_file_brKM47
   "version": "1.0.1",
   "private": true,
   "dependencies": {
