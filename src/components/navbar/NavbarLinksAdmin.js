@@ -63,13 +63,6 @@ export default function HeaderLinks(props) {
 				<Flex align="center" justify="center" bg={ethBox} h="29px" w="29px" borderRadius="30px" me="7px">
 					<Icon color={ethColor} w="9px" h="14px" as={FaEthereum} />
 				</Flex>
-				<Text w="max-content" color={ethColor} fontSize="sm" fontWeight="700" me="6px">
-					1,924
-					<Text as="span" display={{ base: 'none', md: 'unset' }}>
-						{' '}
-						ETH
-					</Text>
-				</Text>
 			</Flex>
 			<SidebarResponsive routes={routes} />
 			<Menu>
@@ -96,7 +89,7 @@ export default function HeaderLinks(props) {
 					</Flex>
 					<Flex flexDirection="column">
 						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} px="0" borderRadius="8px" mb="10px">
-							<ItemContent info="Horizon UI Dashboard PRO" aName="Alicia" />
+							<ItemContent info="DTVT Asset Management Dashboard PRO" aName="Alicia" />
 						</MenuItem>
 						<MenuItem _hover={{ bg: 'none' }} _focus={{ bg: 'none' }} px="0" borderRadius="8px" mb="10px">
 							<ItemContent info="Horizon Design System Free" aName="Josh Henry" />
@@ -132,7 +125,7 @@ export default function HeaderLinks(props) {
               w='100%'
               href='https://horizon-ui.com/pro?ref=horizon-chakra-free'>
               <Button w='100%' h='44px' mb='10px' variant='brand'>
-                Buy Horizon UI PRO
+                Buy DTVT Asset Management PRO
               </Button>
             </Link>
             <Link
