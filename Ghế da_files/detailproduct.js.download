@@ -1,0 +1,81 @@
+﻿$(function () {
+    $(".slider-sp .owl-carousel .gotoGallery1,.img-frt").click(function () { $('.fotorama-img').addClass('active'); $('.closex').addClass('show') });
+    $('.closex').click(function () { $('.fotorama-org').removeClass('active'); $('.closex').removeClass('show') });
+    $(".slider-sp .owl-carousel .gotoGallery2").click(function () { $('.fotorama-video').addClass('active'); $('.closex').addClass('show') });
+    $("#imageGallery-product").lightSlider({ item: 6, loop: !0, controls: !0, auto: !0, pager: !1, slideMove: 1, slideMargin: 10, easing: "cubic-bezier(0.25, 0, 0.25, 1)", speed: 600, onSliderLoad: function () { $("#imageGallery-product").removeClass("cS-hidden") }, responsive: [{ breakpoint: 480, settings: { item: 1, slideMove: 1 } }] });
+    $(".slider-list-product2 .slider").lightSlider({ item: 3, loop: !0, controls: !0, auto: !0, pager: !1, slideMove: 1, pauseOnHover: !0, easing: "cubic-bezier(0.25, 0, 0.25, 1)", speed: 600, slideMargin: .001, onSliderLoad: function () { $(".slider-list-product2 .slider").removeClass("cS-hidden") }, responsive: [{ breakpoint: 800, settings: { item: 3, slideMove: 1, slideMargin: 6 } }, { breakpoint: 480, settings: { item: 2, slideMove: 1 } }] });
+    $(".slider-describe .slider").lightSlider({ adaptiveHeight: !0, item: 1, coltrols: !1, pager: !0, slideMargin: 0, loop: !0, mode: "slide", onSliderLoad: function () { $(".slider-describe .slider").removeClass("cS-hidden") } });
+    if ($('#CurrentPrice').length > 0 && $('.opt').length > 0) {
+        var price = $('#Price').val();
+        if (price != undefined && price > 0) {
+            var more = changeAttr();
+            var newprice = parseFloat(price) + parseFloat(more);
+            $('#CurrentPrice').html(formatPrice(newprice, '&#8363;'));
+        }
+        $('.opt').click(function () {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            var more = changeAttr();
+            var newprice = parseFloat(price) + parseFloat(more);
+            $('#CurrentPrice').html(formatPrice(newprice, '&#8363;'));
+        })
+    }
+    var scrollTrigger = $('.top-header').height();
+    var scrollTrigger2 = $('footer').height();
+    var scrollTrigger3 = $('.product-orther').height();
+    var scrollTrigger4 = $('.mark').height();
+    var bottom = scrollTrigger2 + scrollTrigger3 + scrollTrigger4;
+    var bottom2 = bottom + 50;
+    $(".describe .right-bar").sticky({ topSpacing: scrollTrigger, bottomSpacing: bottom2 });
+    $('<div class="quantity-nav"><div class="quantity-button quantity-up"><i class="fa fa-angle-up" aria-hidden="true"></i></div><div class="quantity-button quantity-down"><i class="fa fa-angle-down" aria-hidden="true"></i></div></div>').insertAfter('.quantity input');
+    $('.quantity').each(function () {
+        var spinner = jQuery(this),
+            input = spinner.find('input[type="number"]'),
+            btnUp = spinner.find('.quantity-up'),
+            btnDown = spinner.find('.quantity-down'),
+            min = input.attr('min'),
+            max = input.attr('max');
+        btnUp.click(function () {
+            var oldValue = parseFloat(input.val());
+            if (oldValue >= max) {
+                var newVal = oldValue;
+            } else {
+                var newVal = oldValue + 1;
+            }
+            spinner.find("input").val(newVal);
+            spinner.find("input").trigger("change");
+        });
+        btnDown.click(function () {
+            var oldValue = parseFloat(input.val());
+            if (oldValue <= min) {
+                var newVal = oldValue;
+            } else {
+                var newVal = oldValue - 1;
+            }
+            spinner.find("input").val(newVal);
+            spinner.find("input").trigger("change");
+        });
+    });
+    if ($(window).width() > 991) { $('.parameter .item-3 ul').lightSlider({ item: 3, loop: true, auto: true, slideMove: 1, controls: true, pauseOnHover: true, verticalHeight: 100, vertical: true, pager: false, controls: false, easing: 'cubic-bezier(0.25, 0, 0.25, 1)', speed: 600, }); }
+    var gallery = $("#imageGallery").lightSlider({ item: 1, loop: !0, controls: !0, auto: !1, pager: !1, slideMove: 1, slideMargin: 10, easing: "cubic-bezier(0.25, 0, 0.25, 1)", speed: 600, onSliderLoad: function () { $("#imageGallery").removeClass("cS-hidden") }, responsive: [{ breakpoint: 480, settings: { item: 1, slideMove: 1 } }] });
+    $('.attr_change_radio.picture').change(function () {
+        if ($(this).is(':checked')) {
+            v = $(this).val();
+            idx = $('#imageGallery .item-color-' + v).index();
+            if (idx >= 0) {
+                gallery.goToSlide(idx);
+            }
+        }
+    });
+});
+
+function changeAttr() {
+    var addMore = 0;
+    $('.attr_change_radio').each(function () {
+        if ($(this).is(':checked')) {
+            var add = $(this).data('price');
+            addMore += parseFloat(add);
+        }
+    });
+    return addMore;
+}
