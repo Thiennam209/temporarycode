@@ -1,0 +1,14 @@
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('//theme.hstatic.net/200000065946/1001128819/14/fontawesome.eot?v=244');
+	src: url('//theme.hstatic.net/200000065946/1001128819/14/fontawesome.eot?v=244') format('embedded-opentype'), url('//theme.hstatic.net/200000065946/1001128819/14/fontawesome.woff?v=244') format('woff'), url('//theme.hstatic.net/200000065946/1001128819/14/fontawesome.ttf?v=244') format('truetype'), url('//theme.hstatic.net/200000065946/1001128819/14/fontawesome.svg?v=244') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+} 
+@font-face {
+	font-family:'Glyphicons Halflings';
+	src:url('//theme.hstatic.net/200000065946/1001128819/14/glyphicons-halflings-regular.eot?v=244');
+	src:url('//theme.hstatic.net/200000065946/1001128819/14/glyphicons-halflings-regular.eot?#iefix?v=244') format('embedded-opentype'),url('//theme.hstatic.net/200000065946/1001128819/14/glyphicons-halflings-regular.woff?v=244') format('woff'),url(//theme.hstatic.net/200000065946/1001128819/14/glyphicons-halflings-regular.ttf?v=244) format('truetype'),url(//theme.hstatic.net/200000065946/1001128819/14/glyphicons-halflings-regular.svg#glyphicons_halflingsregular?v=244) format('svg');
+	font-display: fallback;
+}
